@@ -5,7 +5,7 @@ const port = 3002
 
 
 
-let contentArray = [ ];
+let blogPost = [ ];
 
 var bodyParser = require('body-parser')
 
@@ -25,7 +25,7 @@ app.listen(port, () => {
 
 
 app.get('/content', (req, res) =>{
-    res.send(JSON.stringify(contentArray))
+    res.send(JSON.stringify(blogPost))
 })
 
 //post method rout
@@ -33,7 +33,7 @@ app.post('/content/new', function(req, res) {
 
     console.log("req: ", req.body)
     let input = req.body;
-    contentArray.push(input.content)
+    blogPost.push(input.content)
     res.send('cnontent')
 })
 
