@@ -1,16 +1,29 @@
 
-const path = require('path') 
+const path = require('path'); 
+const cool = require('cool-ascii-faces');
 const mongoose = require('mongoose');
-const bodyParser = require('body-parser')
-const express = require('express')
-const app = express()
-const port = 3002
-const databaseLink = 'mongodb+srv://crzimmer1:Blitzen1@cluster0.sry9r.mongodb.net/myFirstDatabase?retryWrites=true&w=majority'
+const bodyParser = require('body-parser');
+const express = require('express');
+const app = express();
+const port = 3002;
+const PORT = process.env.PORT || 5000;
+const databaseLink = 'mongodb+srv://crzimmer1:Blitzen1@cluster0.sry9r.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
+
+
+
 main().catch(err=> console.log(err));
 
 async function main(){
 
     //mongoose database
+    express()
+        .use(express.static(path.join(__dirname, 'public')))
+        .set('views', path.join(__dirname, 'views'))
+        .set('view engine', 'ejs')
+        .get('/', (req, res) => res.render('pages/index'))
+        .get('/cool', (req, res) => res.send(cool()))
+        .listen(PORT, () => console.log(`Listening on ${ PORT }`));
+
     await mongoose.connect(databaseLink);
 
     const articleSchema = new mongoose.Schema({
