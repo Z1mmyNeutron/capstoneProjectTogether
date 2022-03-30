@@ -1,3 +1,5 @@
+
+const path = require('path') 
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser')
 const express = require('express')
@@ -41,9 +43,9 @@ async function main(){
     app.use(bodyParser.json())
 
     //get request
-    app.get('/', (req, res) => {
-    res.send('Hello World!')
-    })
+    app.get('/',  express.static(path.join(__dirname, "public")));
+
+    
 
     app.listen(port, () => {
     console.log(`Example app listening on port ${port}`)

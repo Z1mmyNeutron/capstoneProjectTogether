@@ -3,8 +3,12 @@ window.onload = function(){
 
     //Button for posting code 
     let postButton = document.getElementById("postButton");
+    let title = document.getElementById("title");
+    let author = document.getElementById("author");
+    let content = document.getElementById("content");
     postButton.onclick = function(){
-        console.log("hello");
+        console.log("hello", "title: ", title.value, " author: ", author.value, "content:", content.value);
+        postData('http://localhost:3002/content/new', {title: title.value, author: author.value, content: content.value});
     }
 }
 
