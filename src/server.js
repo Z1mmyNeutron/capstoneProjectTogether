@@ -45,15 +45,15 @@ async function main(){
         //then verify that all needed properties exist and are non-empty if strings
         
       
-        let hasTitle = input.title !== undefined && input.title.length > 0;
-        let hasAuthor = input.author !== undefined && input.author.length > 0;
+        let hasGoal = input.goal !== undefined && input.goal.length > 0;
+        let hasSteps = input.steps !== undefined && input.steps.length > 0;
         let hasContent = input.content !== undefined && input.content.length > 0;
 
         if(hasAuthor === true && hasTitle === true && hasContent === true) {
             //if all validation checks are met, create a content object
             let content = {
-                author        : input.author, 
-                title         : input.title, 
+                steps        : input.steps, 
+                goal          : input.goal, 
                 content       : input.content,
                 timestamp     : new Date(),
                 contentID     : Math.floor(Math.random()*99999999) 
@@ -67,8 +67,8 @@ async function main(){
             //otherwise, report error
             res.send(JSON.stringify({
                 error : "Missing requisite property (check your spelling)",
-                missingAuthor   : !hasAuthor,
-                missingTitle    : !hasTitle,
+                missingSteps   : !hasSteps,
+                missingGoal    : !hasGoal,
                 missingContent  : !hasContent,
             }))
         }
