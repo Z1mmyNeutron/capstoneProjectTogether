@@ -35,6 +35,7 @@ async function main(){
     });
 
 
+   
 
     const Article = mongoose.model('Article', articleSchema);
 
@@ -49,21 +50,44 @@ async function main(){
     //body 
 
     let blogPost = [ ];
- 
+
+
+    //chatroom
+    let messages = ({ sender: String, reciever: String, message: String, messageNumber: Number});
+
+
+    app.use(bodyParser.json());
+    app.get('/',  express.static(path.join(__dirname, "public")));
+    
+    app.get('/messages', express.static(path.join(_dirname, "public")));
+    app.listen(port, () => {
+        console.log(`Message example on port ${port}`)
+
+    })
+    app.get('/messages', (req, res)=>{
+        res.send(JSON.stringify(messages))
+    })
+    app.post('/messages/new', function(req, res){
+        console.log("req: ", req.body)
+        let input = req.body;
+        let messageNumber = Math.floor(Math.random()*99999999);
+        const newMessage = new ChatRoom({sender: input.sender, reciever: input.reciever, message: input.message, messageNumber: messageNumber });
+        messages.push(input.message);
+        newMessage.save();
+        res.send('messages');
+    })
+
+
 
     //json postman get and send requests
 
-    app.use(bodyParser.json())
-
+ 
     //get request
-    app.get('/',  express.static(path.join(__dirname, "public")));
-
+ 
     
-
     app.listen(port, () => {
     console.log(`Example app listening on port ${port}`)
     })
-
     //get request
 
     app.get('/content', (req, res) =>{
@@ -76,7 +100,6 @@ async function main(){
         console.log("req: ", req.body)
         let input = req.body;
         let id = Math.floor(Math.random()*99999999);
-
        
         const newArticle = new Article({id: id, title: input.title, author: input.author, content: input.content})
       
