@@ -3,6 +3,18 @@
 <html>
     <script type="module" src="./main.js"></script>
     <style>
+
+        .footer{
+            padding-top:5px;  
+            align-items: center; 
+            justify-content: center;
+            text-align: center;
+            background-color: black;
+            padding-left:5vw;
+            padding-right:5vw;
+            color:rgb(177, 225, 234);
+        
+        }
         .textInputClass{
             margin:5px;
             border-radius: 5px;
@@ -25,7 +37,7 @@
         padding-top:5px;  
         padding-bottom: 5px; 
         align-items: center; 
-          justify-content: center;
+        justify-content: center;
         text-align: center;
         background-color: black;
         padding-left:5vw;
@@ -60,35 +72,43 @@
         }
     </style>
     <body>
-        <div class="navbarContainer" id="navbarContainer">
-            <a class="active" href="#home" id="Home">Home</a>
-            <a href="Links.html" id="Links">Useful Links</a>
-            <a href="GoalTracker.html" id="GoalTracker">Goal Tracker</a>
-            <a href="Alarm.html" id="Alarm">Alarm</a>
-            <a href="About.html" id="About">About</a>   
-        </div>
-
-        <div id="Alarm">
-            <p>This is the alarm page</p>
-        </div>
-        
         <div>
-            <p>Post content</p>
-            <input type="text"  id="title"  name="title"  placeholder="title" class="textInputClass"></input>
+            <div class="navbarContainer" id="navbarContainer">
+                <a class="active" href="/" id="Home">Home</a>
+                <a href="Links.html" id="Links">Useful Links</a>
+                <a href="GoalTracker.html" id="GoalTracker">Goal Tracker</a>
+                <a href="Alarm.html" id="Alarm">Alarm</a>
+                <a href="About.html" id="About">About</a>   
+            </div>
 
-            <br>
-
-            <input type="text"  id="author"  name="author"  placeholder="author"  class="textInputClass"></input>
-
-            <br>
-
-            <input type="text"   id="content"   name="content"   placeholder="content"   class="textInputClass"></input>
-
-            <br>
-            <br>
-            
-            <p id="postButton">Post</p>
-
+        <div>
+            <h1> Study Calculator!</h1>
         </div>
+            
+            <div>
+                <p>Goals</p>
+                <input type="text"  id="title"  name="title"  placeholder="title" class="textInputClass"></input>
+
+                <br>
+
+                <input type="text"  id="author"  name="author"  placeholder="author"  class="textInputClass"></input>
+
+                <br>
+
+                <input type="text"   id="content"   name="content"   placeholder="content"   class="textInputClass"></input>
+
+                <br>
+                <br>
+                
+                <p id="postButton">Post</p>
+
+            </div>
+
+            <div class="footer" id="footer">
+                <p>Pomodoro Study Calculator</p>
+                <p>Created by Christina. Nuray, Ethan and Sulemann</p>
+            </div>
+        </div>
+
     </body>
 </html>
