@@ -5,11 +5,82 @@
     <script type="module" src="./main.js"></script>
     <style>
         
+        .Headers{
+            color:blue;
+            justify-content:  center;
+            align-items: center;
+            text-align: center;
+            font-size: 40px;
+
+        }
+        .grid-container {
+            display: grid;
+            grid-template-columns: auto auto auto;
+            background-color: #2196F3;
+            padding: 10px;
+        }
+        .grid-item {
+            background-color: rgba(255, 255, 255, 0.8);
+            border: 1px solid rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            font-size: 20px;
+            text-align: center;
+        }
+
+
+    .navbarContainer{
+        padding-top:5px;  
+        padding-bottom: 5px; 
+        align-items: center; 
+        justify-content: center;
+        text-align: center;
+        background-color: black;
+        padding-left:5vw;
+        padding-right:5vw;
+        color:rgb(177, 225, 234);
+        border-radius: 2px;
+        cursor: pointer;
+        transition: all linear 1s;
+        height:35px; 
+      
+    }
+
+
+    .navbarButton:hover{
+        transition: all linear .5s;
+        background-color: rgb(4, 24, 0);
+        color:rgb(255, 255, 255);
+        border-radius: 5%;
+    }
+        
     </style>
     <body>
-       
-            <p id="Links">Links</p>
+        <div>
+            <div class="navbarContainer" id="navbarContainer">
+                <a class="active" href="#home" id="Home">Home</a>
+                <a href="Links.html" id="Links">Useful Links</a>
+                <a href="GoalTracker.html" id="GoalTracker">Goal Tracker</a>
+                <a href="Alarm.html" id="Alarm">Alarm</a>
+                <a href="About.html" id="About">About</a>   
+            </div>
+        
+            <h1 class = "Headers">Useful Links</h1>
 
-        </div>
+            <div class="grid-container">
+                <div class="grid-tem">
+                    <p> filler photo</p>
+                </div>
+                <div class="grid-item">
+                    <div>
+                        <p>Add links here</p>
+                    </div>
+                </div>
+            </div>
+        
+            <br>
+
+        
+    
+    </div>
     </body>
 </html>
