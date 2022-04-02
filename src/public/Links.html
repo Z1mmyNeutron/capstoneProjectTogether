@@ -43,7 +43,7 @@
             padding: 20px;
         }
         a:link, a:visited {
-            background-color: #1574e0e0;
+            background-color: #111;
             color: white;
             padding: 14px 25px;
             text-align: center;
@@ -52,43 +52,74 @@
         }
 
         a:hover, a:active {
-            background-color: rgb(48, 80, 168);
+            background-color: #111;
         }
 
+
+    li{
+        float:left;
+    }
+
+    li a{
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-family: monaco;
+    }
+    li a:hover:not(.active) {
+        background-color: #111;
+    }
+    ul{
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: #333;
+    }
     .navbarContainer{
-        padding-top:5px;  
-        padding-bottom: 5px; 
+        font-family: monaco;
         align-items: center; 
         justify-content: center;
         text-align: center;
         background-color: black;
-        padding-left:5vw;
-        padding-right:5vw;
         color:rgb(177, 225, 234);
         border-radius: 2px;
         cursor: pointer;
         transition: all linear 1s;
-        height:35px; 
+        height:45px; 
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    
       
     }
 
 
     .navbarButton:hover{
+        font-family: monaco;
         transition: all linear .5s;
         background-color: rgb(4, 24, 0);
         color:rgb(255, 255, 255);
         border-radius: 5%;
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        
+   
     }
         
     </style>
     <body>
         <div>
             <div class="navbarContainer" id="navbarContainer">
-                <a class="active" href="/" id="Home">Home</a>
-                <a href="Links.html" id="Links">Useful Links</a>
-                <a href="GoalTracker.html" id="GoalTracker">Goal Tracker</a>
-                <a href="Alarm.html" id="Alarm">Alarm</a>
-                <a href="About.html" id="About">About</a>   
+                <li><a class="active" href="/" id="Home">Home</a></li>
+                <li><a href="Links.html" id="Links">Useful Links</a></li>
+                <li><a href="GoalTracker.html" id="GoalTracker">Goal Tracker</a></li>
+                <li><a href="Alarm.html" id="Alarm">Alarm</a></li>
+                <li><a href="About.html" id="About">About</a></li>   
+                <li><a href="Music.html" id="Music">Music</a></li>   
             </div>
         
             <h1 class = "Headers">Useful Links</h1>
