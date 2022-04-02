@@ -1,10 +1,10 @@
 {
   "name": "toad",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js"
+    "start": "npx nodemon"
   },
   "engines": {
     "node": "14.x"

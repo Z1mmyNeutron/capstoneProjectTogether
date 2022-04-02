@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+
+<html>
+    <script type="module" src="./main.js"></script>
+    <style>
+        .textInputClass{
+            margin:5px;
+            border-radius: 5px;
+            font-size:20px;
+        }
+        #postButton{
+            display:flex;
+            width:100px;
+            padding-top: 20px;
+            padding-bottom:20px;
+            justify-content: center;
+            vertical-align: center;
+            border-radius: 10px;
+            background-color: rgb(114, 194, 194);
+        }
+        #postButton:hover{
+            background-color: rgb(8, 100, 100);
+        }
+    </style>
+    <body>
+        <div>
+            <p>Post content</p>
+            <input type="text"  id="title"  name="title"  placeholder="title" class="textInputClass"></input>
+
+            <br>
+
+            <input type="text"  id="author"  name="author"  placeholder="author"  class="textInputClass"></input>
+
+            <br>
+
+            <input type="text"   id="content"   name="content"   placeholder="content"   class="textInputClass"></input>
+
+            <br>
+            <br>
+            
+            <p id="postButton">Post</p>
+
+        </div>
+    </body>
+</html>
