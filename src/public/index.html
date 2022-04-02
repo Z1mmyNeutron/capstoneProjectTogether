@@ -8,6 +8,44 @@
             border-radius: 5px;
             font-size:20px;
         }
+
+    .mainBackground{
+        background-color:rgb(255, 255, 255);
+        position:absolute; top: 50%; 
+        left: 50%; min-width:300px; 
+        transform: translate(-50%, -50%);     
+        text-align: center; 
+        justify-content:center;
+        font-size: 20px; 
+        visibility:hidden; 
+        width:100vw; 
+        height:100vh
+    }
+    .navbarContainer{
+        padding-top:5px;  
+        padding-bottom: 5px; 
+        align-items: center; 
+        background-color: black;
+    }
+
+    .navbarButton{
+        margin-left:10px;
+        margin-right:10px;
+        padding-left:1vw;
+        padding-right:1vw;
+        color:rgb(177, 225, 234);
+        border-radius: 2px;
+        cursor: pointer;
+        transition: all linear 1s;
+        height:35px; 
+        justify-content: center;
+    }
+    .navbarButton:hover{
+        transition: all linear .5s;
+        background-color: rgb(4, 24, 0);
+        color:rgb(255, 255, 255);
+        border-radius: 5%;
+    }
         #postButton{
             display:flex;
             width:100px;
@@ -23,9 +61,18 @@
         }
     </style>
     <body>
-     
         <div>
-            
+            <p>
+                <span id="music-query"              class="navbarButton">Music</span>
+                <span id="upload-instrumental"      class="navbarButton">Goal Tracker</span>
+                <span id="re-authenticate"          class="navbarButton dashboardButton" >Useful Links</span>
+                <span id="user-query"               class="navbarButton">Alarm System</span>
+                <span id="logout-button"            class="navbarButton">Logout</span>
+            </p>
+            <p> other change for</p>
+        </div>
+        
+        <div>
             <p>Post content</p>
             <input type="text"  id="title"  name="title"  placeholder="title" class="textInputClass"></input>
 
@@ -41,8 +88,6 @@
             <br>
             
             <p id="postButton">Post</p>
-
-
 
         </div>
     </body>
