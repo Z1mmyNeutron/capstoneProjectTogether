@@ -47,14 +47,12 @@ async function main(){
       
         let hasGoal = input.goal !== undefined && input.goal.length > 0;
         let hasSteps = input.steps !== undefined && input.steps.length > 0;
-        let hasContent = input.content !== undefined && input.content.length > 0;
 
-        if(hasGoal === true && hasSteps === true && hasContent === true) {
+        if(hasGoal === true && hasSteps === true) {
             //if all validation checks are met, create a content object
             let content = {
                 steps        : input.steps, 
                 goal          : input.goal, 
-                content       : input.content,
                 timestamp     : new Date(),
                 contentID     : Math.floor(Math.random()*99999999) 
             };
@@ -69,7 +67,6 @@ async function main(){
                 error : "Missing requisite property (check your spelling)",
                 missingSteps   : !hasSteps,
                 missingGoal    : !hasGoal,
-                missingContent  : !hasContent,
             }))
         }
     })

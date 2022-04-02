@@ -7,22 +7,24 @@ window.onload = function(){
     let author     = document.getElementById("author");
     let content    = document.getElementById("content");
 
-    postButton.onclick = function(){
-        console.log("hello", "title: ", title.value, " author: ", author.value, "content:", content.value);
-        postData('http://localhost:5000/content/new', {sender: title.value, author: author.value, content: content.value});
+    if(postButton){
+        postButton.onclick = function(){
+            console.log("hello", "title: ", title.value, " author: ", author.value, "content:", content.value);
+            postData('http://localhost:5000/content/new', {sender: title.value, author: author.value, content: content.value});
+        }
     }
 
 
 
     //Button for posting goal
-    let goalButton = document.getElementById("goalButton");
+    let goalsButton = document.getElementById("goalsButton");
     let goals      = document.getElementById("goals");
     let steps     = document.getElementById("steps");
-    let content1    = document.getElementById("content1");
 
-    postButton.onclick = function(){
-        console.log("hello", "goal: ", goals.value, " author: ", steps.value, "content:", content1.value);
-        postData('http://localhost:5000/goals/new', {goals: goals.value, steps: steps.value, content1: content1.value});
+
+    goalsButton.onclick = function(){
+        console.log("hello", "goals: ", goals.value, " steps: ", steps.value);
+        postData('http://localhost:5000/goals/new', {goals: goals.value, steps: steps.value});
     }
 }
 
