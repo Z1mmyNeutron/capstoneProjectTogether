@@ -31,14 +31,53 @@
             font-size: 20px;
             text-align: center;
         }
+
+
+    .navbarContainer{
+        padding-top:5px;  
+        padding-bottom: 5px; 
+        align-items: center; 
+        justify-content: center;
+        text-align: center;
+        background-color: black;
+        padding-left:5vw;
+        padding-right:5vw;
+        color:rgb(177, 225, 234);
+        border-radius: 2px;
+        cursor: pointer;
+        transition: all linear 1s;
+        height:35px; 
+      
+    }
+
+
+    .navbarButton:hover{
+        transition: all linear .5s;
+        background-color: rgb(4, 24, 0);
+        color:rgb(255, 255, 255);
+        border-radius: 5%;
+    }
         
     </style>
     <body>
-      
-        <div><h1 class = "Headers">About</h1></div>
+        <div>
+            <div class="navbarContainer" id="navbarContainer">
+                <a class="active" href="#home" id="Home">Home</a>
+                <a href="Links.html" id="Links">Useful Links</a>
+                <a href="GoalTracker.html" id="GoalTracker">Goal Tracker</a>
+                <a href="Alarm.html" id="Alarm">Alarm</a>
+                <a href="About.html" id="About">About</a>   
+            </div>
+        
+        <div>
+            <h1 class = "Headers">About</h1>
+        </div>
 
-        <div class = "grid-container"></div>
-        <div class="grid-container">
+        <div>
+            <p> This is where your top grid will go</p>
+            <div class = "grid-container"></div>
+            <div class="grid-container"></div>
+        </div>
         <div class="grid-item">
             <p>placeholder text</p>
 
@@ -53,8 +92,7 @@
                 <p>If the Pomodoro timer is active the music player will play music during study time and will pause during breaks.</p>
             </div>
         </div>
-
-          </div>
-
+        </div>
+    </div>
     </body>
 </html>
