@@ -38,7 +38,7 @@
         align-items: center; 
         justify-content: center;
         text-align: center;
-        background-color: black;
+        background-color: rgb(255, 225, 225);
         padding-left:5vw;
         padding-right:5vw;
         color:rgb(177, 225, 234);
@@ -93,20 +93,19 @@
 
     </style>
 
-    <body>
+<div class="navbarContainer" id="navbarContainer">
+    <a class="active" href="/" id="Home">Home</a>
+    <a href="Links.html" id="Links">Useful Links</a>
+    <a href="GoalTracker.html" id="GoalTracker">Goal Tracker</a>
+    <a href="Alarm.html" id="Alarm">Alarm</a>
+    <a href="About.html" id="About">About</a>   
+</div>
         <div>
-            <div class="navbarContainer" id="navbarContainer">
-                <a class="active" href="/" id="Home">Home</a>
-                <a href="Links.html" id="Links">Useful Links</a>
-                <a href="GoalTracker.html" id="GoalTracker">Goal Tracker</a>
-                <a href="Alarm.html" id="Alarm">Alarm</a>
-                <a href="About.html" id="About">About</a>   
-            </div>
         
-            <h1 class = "Headers">Alarm</h1>
+            <h1 class="Headers" id="alarm-header">Alarm</h1>
 
            
-            <div class="grid-container">
+            <div class="grid-container" id="grid">
                 <div class="grid-item">
                     <p> filler text</p>
                 </div>
@@ -120,7 +119,7 @@
                           <div class="form-actions">
                             <form>
                               <div class="alarm-inputs">
-                                <input
+                                <!-- <input
                                   type="number"
                                   name="hour"
                                   placeholder="Enter hours"
@@ -143,7 +142,7 @@
                                   max="60"
                                   placeholder="Enter seconds"
                                   required
-                                />
+                                /> -->
                               </div>
                               <button>Submit</button>
                             </form>
@@ -161,10 +160,5 @@
               
             </div>
         </div>
-   
-            <br>
 
-        
-
-    </body>
 </html>
