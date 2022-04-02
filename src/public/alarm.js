@@ -1,4 +1,4 @@
-import '/styles.css'
+
 var alarmString = null;
 
 // Select HTML5 Audio element
