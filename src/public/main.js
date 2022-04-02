@@ -11,6 +11,19 @@ window.onload = function(){
         console.log("hello", "title: ", title.value, " author: ", author.value, "content:", content.value);
         postData('http://localhost:5000/content/new', {sender: title.value, author: author.value, content: content.value});
     }
+
+
+
+    //Button for posting goal
+    let goalButton = document.getElementById("goalButton");
+    let goals      = document.getElementById("goals");
+    let steps     = document.getElementById("steps");
+    let content1    = document.getElementById("content1");
+
+    postButton.onclick = function(){
+        console.log("hello", "goal: ", goals.value, " author: ", steps.value, "content:", content1.value);
+        postData('http://localhost:5000/goals/new', {goals: goals.value, steps: steps.value, content1: content1.value});
+    }
 }
 
 

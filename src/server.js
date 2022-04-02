@@ -20,7 +20,7 @@ async function main(){
     
     let messages = [];
     let blogContent = [];
-    let goals = [];
+    let goalsContent = [];
  
     app.get('/',  express.static(path.join(__dirname, "public")));  //this line hosts your public website, found in your public folder
 
@@ -33,11 +33,11 @@ async function main(){
     })
 
     app.get('/goals', (req, res)=>{
-        res.send(JSON.stringify(goals));
+        res.send(goalsContent);
     })
 
     app.post('goals/new', function(req, res){
-        console.log("content/new: ", req.body)
+        console.log("goals/new: ", req.body)
         
         //validate 
         let input = req.body;   //write body into input
@@ -49,7 +49,7 @@ async function main(){
         let hasSteps = input.steps !== undefined && input.steps.length > 0;
         let hasContent = input.content !== undefined && input.content.length > 0;
 
-        if(hasAuthor === true && hasTitle === true && hasContent === true) {
+        if(hasGoal === true && hasSteps === true && hasContent === true) {
             //if all validation checks are met, create a content object
             let content = {
                 steps        : input.steps, 
@@ -59,7 +59,7 @@ async function main(){
                 contentID     : Math.floor(Math.random()*99999999) 
             };
             //push to the array
-            blogContent.push(content);
+            goalsContent.push(content);
 
             //return a data packet to the user
             res.send(JSON.stringify(content));
