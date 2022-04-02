@@ -133,3 +133,4 @@ const renderTime = () => {
 
 // Update time every second
 setInterval(renderTime, 500);
+console.log("test");
