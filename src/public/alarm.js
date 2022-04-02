@@ -22,22 +22,25 @@ alarmAudio.load();
 
 // Handle Create Alarm submit
 const handleSubmit = (event) => {
-  // Prevent default action of reloading the page
-  event.preventDefault();
-  const { hour, sec, min, zone } = document.forms[0];
-  alarmString = getTimeString({
-    hours: hour.value,
-    seconds: sec.value,
-    minutes: min.value,
-    zone: zone.value
-  });
-  // Reset form after submit
-  document.forms[0].reset();
-  // Hide create alarm
-  createAlarm.style.display = "none";
-  // show active alarm with text
-  activeAlarm.style.display = "block";
-  alarmTextContainer.innerHTML = alarmText(alarmString);
+    // Prevent default action of reloading the page
+    event.preventDefault();
+    const { hour, sec, min } = document.forms[0];
+
+
+    alarmString = getTimeString_fromNow({
+      hours: hour.value,
+      minutes: min.value,
+      seconds: sec.value,
+    });
+
+
+    // Reset form after submit
+    document.forms[0].reset();
+    // Hide create alarm
+    createAlarm.style.display = "none";
+    // show active alarm with text
+    activeAlarm.style.display = "block";
+    alarmTextContainer.innerHTML = alarmText(alarmString);
 };
 
 const handleClear = () => {
@@ -59,31 +62,47 @@ const checkAlarm = (timeString) => {
 };
 
 // Function to convert time to string value
-const getTimeString = ({ hours, minutes, seconds, zone }) => {
-  if (minutes / 10 < 1) {
-    minutes = "0" + minutes;
-  }
-  if (seconds / 10 < 1) {
-    seconds = "0" + seconds;
-  }
-  return `${hours}:${minutes}:${seconds} ${zone}`;
+const getTimeString_fromNow = ({ hours, minutes, seconds }) => {
+
+  let currentTime = new Date();
+
+  console.log(hours, minutes, seconds)
+
+  // console.log("current time :: ", currentTime.toTimeString())
+
+  let timeNeeded = new Date();
+
+  timeNeeded.setTime(currentTime.getTime()+1000*seconds + minutes * 60*1000 + hours*60*60*1000);
+
+  let timeStr = timeNeeded.toTimeString().split(" ")[0];
+
+  // console.log(timeStr + " curnet", currentTime.toTimeString())
+
+  let hms = timeStr.split(":");
+
+  return `${hms[0]}:${hms[1]}:${[hms[2]]}`;
 };
+
+const getTimeString = ({ hours, minutes, seconds }) => {
+
+
+
+  return `${hours}:${minutes}:${seconds}`;
+};
+
 
 // Function to display current time on screen
 const renderTime = () => {
   var currentTime = document.getElementById("current-time");
   const currentDate = new Date();
-  var hours = currentDate.getHours();
-  var minutes = currentDate.getMinutes();
-  var seconds = currentDate.getSeconds();
-  var zone = hours >= 12 ? "PM" : "AM";
-  if (hours > 12) {
-    hours = hours % 12;
-  }
-  const timeString = getTimeString({ hours, minutes, seconds, zone });
+  let hours = currentDate.getHours();
+  const minutes = currentDate.getMinutes();
+  const seconds = currentDate.getSeconds();
+
+  const timeString = getTimeString({ hours, minutes, seconds });
   checkAlarm(timeString);
   currentTime.innerHTML = timeString;
 };
 
 // Update time every second
-setInterval(renderTime, 1000);
+setInterval(renderTime, 500);
