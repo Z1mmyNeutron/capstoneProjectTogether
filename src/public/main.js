@@ -9,9 +9,12 @@ window.onload = function(){
 
     postButton.onclick = function(){
         console.log("hello", "title: ", title.value, " author: ", author.value, "content:", content.value);
-        postData('http://localhost:5000/content/new', {title: title.value, author: author.value, content: content.value});
+        postData('http://localhost:5000/content/new', {sender: title.value, author: author.value, content: content.value});
     }
 }
+
+
+
 
 // Example POST method implementation:
 async function postData(url = '', data = {}) {
