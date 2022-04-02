@@ -20,6 +20,7 @@ async function main(){
     
     let messages = [];
     let blogContent = [];
+    let goals = [];
  
     app.get('/',  express.static(path.join(__dirname, "public")));  //this line hosts your public website, found in your public folder
 
@@ -29,6 +30,48 @@ async function main(){
     })
     app.get('/content', (req, res)=>{
         res.send(blogContent);
+    })
+
+    app.get('/goals', (req, res)=>{
+        res.send(JSON.stringify(goals));
+    })
+
+    app.post('goals/new', function(req, res){
+        console.log("content/new: ", req.body)
+        
+        //validate 
+        let input = req.body;   //write body into input
+
+        //then verify that all needed properties exist and are non-empty if strings
+        
+      
+        let hasTitle = input.title !== undefined && input.title.length > 0;
+        let hasAuthor = input.author !== undefined && input.author.length > 0;
+        let hasContent = input.content !== undefined && input.content.length > 0;
+
+        if(hasAuthor === true && hasTitle === true && hasContent === true) {
+            //if all validation checks are met, create a content object
+            let content = {
+                author        : input.author, 
+                title         : input.title, 
+                content       : input.content,
+                timestamp     : new Date(),
+                contentID     : Math.floor(Math.random()*99999999) 
+            };
+            //push to the array
+            blogContent.push(content);
+
+            //return a data packet to the user
+            res.send(JSON.stringify(content));
+        } else {
+            //otherwise, report error
+            res.send(JSON.stringify({
+                error : "Missing requisite property (check your spelling)",
+                missingAuthor   : !hasAuthor,
+                missingTitle    : !hasTitle,
+                missingContent  : !hasContent,
+            }))
+        }
     })
 
     app.post('/messages/new', function(req, res){
