@@ -107,6 +107,7 @@ async function main(){
     app.post('/content/new', function(req, res){
         console.log("content/new: ", req.body)
         
+        console.log("here is a change");
         //validate 
         let input = req.body;   //write body into input
 
