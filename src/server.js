@@ -20,7 +20,7 @@ async function main(){
     
     let messages = [];
     let blogContent = [];
-
+ 
     app.get('/',  express.static(path.join(__dirname, "public")));  //this line hosts your public website, found in your public folder
 
     app.get('/messages', (req, res)=>{
@@ -28,7 +28,7 @@ async function main(){
         res.send(JSON.stringify(messages));
     })
     app.get('/content', (req, res)=>{
-        res.send(JSON.stringify(blogContent));
+        res.send(blogContent);
     })
 
     app.post('/messages/new', function(req, res){
