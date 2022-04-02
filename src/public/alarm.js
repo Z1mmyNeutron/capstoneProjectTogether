@@ -20,6 +20,10 @@ alarmAudio.src = "http://soundbible.com/grab.php?id=1252&type=mp3";
 alarmAudio.load();
 
 
+let alarmHeader = document.getElementById("alarm-header");
+let gridContainer = document.getElementById("grid");
+let currentTimeHTML = document.getElementById("current-time");
+
 let nextIncrementShouldBe5 = false;
 let nextIncrementShouldBe25 = true;
 
@@ -46,6 +50,8 @@ const handleSubmit = (event) => {
     alarmString = getTimeString_fromNow({ hours: hour.value, minutes: min.value, seconds: sec.value,});
 
 
+    gridContainer.style.backgroundColor="red"
+    alarmHeader.style.color="red";
     document.forms[0].reset();// Reset form after submit
     createAlarm.style.display = "none";// Hide create alarm
     activeAlarm.style.display = "block";// show active alarm with text
@@ -96,9 +102,6 @@ const getTimeString = ( hours, minutes, seconds ) => {
   return `${hours}:${_m}:${_s}`;
 };
 
-let alarmHeader = document.getElementById("alarm-header");
-let gridContainer = document.getElementById("grid");
-let currentTimeHTML = document.getElementById("current-time");
 
 // Function to display current time on screen
 const renderTime = () => {

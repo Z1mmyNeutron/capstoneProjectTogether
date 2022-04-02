@@ -2,6 +2,8 @@
 <!DOCTYPE html>
 
 <html>
+    
+    <script type="module" src="./alarm.js"></script>
     <script type="module" src="./main.js"></script>
     <style>
         .Goal{
@@ -84,6 +86,94 @@
         
    
     }
+
+     
+    .about{
+            justify-content:  center;
+            align-items: center;
+            text-align: center;
+        }
+        .Headers{
+            color:blue;
+            justify-content:  center;
+            align-items: center;
+            text-align: center;
+            font-size: 40px;
+
+        }
+        .grid-container {
+            display: grid;
+            grid-template-columns: auto auto auto;
+            background-color: #2196F3;
+            padding: 10px;
+        }
+        .grid-item {
+            background-color: rgba(255, 255, 255, 0.8);
+            border: 1px solid rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            font-size: 20px;
+            text-align: center;
+        }
+
+        .navbarContainer{
+        padding-top:5px;  
+        padding-bottom: 5px; 
+        align-items: center; 
+        justify-content: center;
+        text-align: center;
+        background-color: rgb(255, 225, 225);
+        padding-left:5vw;
+        padding-right:5vw;
+        color:rgb(177, 225, 234);
+        border-radius: 2px;
+        cursor: pointer;
+        transition: all linear 1s;
+        height:35px; 
+      
+        }
+
+        .navbarButton:hover{
+            transition: all linear .5s;
+            background-color: rgb(4, 24, 0);
+            color:rgb(255, 255, 255);
+            border-radius: 5%;
+        }     
+        body {
+            font-family: monaco;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        #current-time {
+            font-size: 32px;
+        }
+        #current-time,
+        .create-alarm,
+        #active-alarm {
+            text-align: center;
+        }
+        .create-alarm,
+        .alarm-inputs,
+        #active-alarm {
+            margin-top: 20px;
+        }
+        input {
+            width: 100px;
+            height: 30px;
+        }
+        .alarm-inputs,
+        #alarm-text {
+            margin-bottom: 30px;
+        }
+        button {
+            font-size: 18px;
+        }
+        #active-alarm {
+            display: none;
+        }
+        
         
     </style>
     <body>
@@ -95,6 +185,67 @@
                 <li><a href="Alarm.html" id="Alarm">Alarm</a></li>
                 <li><a href="About.html" id="About">About</a></li>   
                 <li><a href="Music.html" id="Music">Music</a></li>   
+            </div>
+
+            <div>
+        
+                <h1 class="Headers" id="alarm-header">Alarm</h1>
+    
+               
+                <div class="grid-container" id="grid">
+                    <div class="grid-item">
+                        <p> filler text</p>
+                    </div>
+                    
+                    <div class="grid-item">
+                        <div id="alarm">
+                            <h1>Current Time</h1>
+                            <div id="current-time"></div>
+                            <div class="create-alarm">
+                              <div>Set Alarm</div>
+                              <div class="form-actions">
+                                <form>
+                                  <div class="alarm-inputs">
+                                    <!-- <input
+                                      type="number"
+                                      name="hour"
+                                      placeholder="Enter hours"
+                                      min="0"
+                                      max="12"
+                                      required
+                                    />
+                                    <input
+                                      type="number"
+                                      name="min"
+                                      min="0"
+                                      max="60"
+                                      placeholder="Enter minutes"
+                                      required
+                                    />
+                                    <input
+                                      type="number"
+                                      name="sec"
+                                      min="0"
+                                      max="60"
+                                      placeholder="Enter seconds"
+                                      required
+                                    /> -->
+                                  </div>
+                                  <button>Submit</button>
+                                </form>
+                              </div>
+                            </div>
+                          </div>
+                          <div id="active-alarm">
+                            <div id="alarm-text"></div>
+                            <button id="clear-alarm">Clear Alarm</button>
+                          </div>
+                          <audio id="alarm-audio"></audio>
+                    
+    
+                    </div>
+                  
+                </div>
             </div>
         
         
