@@ -1,39 +1,53 @@
+
 <!DOCTYPE html>
 
 <html>
     <script type="module" src="./main.js"></script>
     <style>
+        .about{
+            justify-content:  center;
+            align-items: center;
+            text-align: center;
+            color: white;
+        }
+        body{
+        background: radial-gradient(#e66465, #9198e5);
+     }
+        .Headers{
+            color:white;
+            justify-content:  center;
+            align-items: center;
+            text-align: center;
+            font-size: 40px;
 
-    footer {
-        text-align: center;
-        padding: 3px;
-        background-color: DarkSalmon;
-        color: white;
-        font-family:monaco;
-       
-    }
-    .textInputClass{
-            margin:5px;
-            border-radius: 5px;
-            font-size:20px;
-            font-family: monaco;
-    }
+        }
+        .Headers2{
+            color: white;
+            justify-content:  center;
+            align-items: center;
+            text-align: center;
+            font-size: 55px;
+            vertical-align: middle;
 
-    .mainBackground{
-        background-color:rgb(255, 255, 255);
-        position:absolute; top: 50%; 
-        left: 50%; min-width:300px; 
-        transform: translate(-50%, -50%);     
-        text-align: center; 
-        justify-content:center;
-        font-size: 20px; 
-        visibility:hidden; 
-        width:100vw; 
-        font-family: monaco;
-    
-       
-    }
-    li{
+        }
+        .grid-container1 {
+            display: grid;
+            grid-template-columns: auto auto auto;
+            padding: 20px;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: auto auto auto;
+            padding: 20px;
+        }
+        .grid-item {
+            padding: 20px;
+            font-size: 20px;
+            text-align: center;
+        }
+
+        li{
         float:left;
     }
 
@@ -60,7 +74,6 @@
         align-items: center; 
         justify-content: center;
         text-align: center;
-        background-color: black;
         color:rgb(177, 225, 234);
         border-radius: 2px;
         cursor: pointer;
@@ -72,12 +85,18 @@
     
       
     }
+    footer {
+        text-align: center;
+        padding: 3px;
+        color: white;
+        font-family:monaco;
+       
+     }
 
 
     .navbarButton:hover{
         font-family: monaco;
         transition: all linear .5s;
-        background-color: rgb(4, 24, 0);
         color:rgb(255, 255, 255);
         border-radius: 5%;
         list-style-type: none;
@@ -86,21 +105,7 @@
         
    
     }
-        #postButton{
-            font-family: monaco;
-            display:flex;
-            width:100px;
-            padding-top: 20px;
-            padding-bottom:20px;
-            justify-content: center;
-            vertical-align: center;
-            border-radius: 10px;
-            background-color: rgb(114, 194, 194);
-        }
-        #postButton:hover{
-            font-family: monaco;
-            background-color: rgb(8, 100, 100);
-        }
+        
     </style>
     <body>
         <div>
@@ -108,40 +113,47 @@
                 <li><a class="active" href="/" id="Home">Home</a></li>
                 <li><a href="Links.html" id="Links">Useful Links</a></li>
                 <li><a href="GoalTracker.html" id="GoalTracker">Goal Tracker</a></li>
-                <li><a href="About.html" id="About">About</a></li>   
                 <li><a href="Music.html" id="Music">Music</a></li>   
             </div>
 
-        <div>
-            <h1>The Study Room</h1>
-        </div>
-            
-            <div>
-                <p>Goals</p>
-                <input type="text"  id="title"  name="title"  placeholder="title" class="textInputClass"></input>
+        
+            <h1 class = "Headers">About Us</h1>
 
-                <br>
-
-                <input type="text"  id="author"  name="author"  placeholder="author"  class="textInputClass"></input>
-
-                <br>
-
-                <input type="text"   id="content"   name="content"   placeholder="content"   class="textInputClass"></input>
-
-                <br>
-                <br>
-                
-                <p id="postButton">Post</p>
-
+            <div class="grid-container1">
+                <div class="grid-tem">
+                    <h1 class = "Headers2" >The Study</h1>
+                    <h1 class = "Headers2">Room</h1>
+                </div>
+                <div class="grid-item" style=" background-color: rgba(255,255,255,.8); border-radius: 5px;">
+                    <div>
+                        <img src = "https://media.istockphoto.com/photos/fireplace-picture-id157523682?k=20&m=157523682&s=612x612&w=0&h=O-rWgkOqcc0CuyVWw8B4aSZ104zZFe9NXLD8xI8dLGs=" />
+                    </div>
+                </div>
             </div>
-      </div>
+        
+            <br>
 
+            <div class="grid-container">
+                <div class="grid-tem">
+                </div>
+                <div class="grid-item">
+                    <div class="about" id="About">
+                        <p>Our Project is a create a website tailored for students dubbed "The Study Room"</p>
+                        <p>The website has several subsections: A Pomodoro Alarm setup, A goal tracker, and an ambient music player</p>
+                        <p>The Pomodoro section is for students who want to use the Pomodoro studying technique to maximize information retention and productivity</p>  
+                        <p>The goal tracker lets students visualize their progress by writing what tasks they need done and what's been accomplished</p>
+                        <p>In the ambient music player students can choose from a list of "moods" they want to foster throughout their study session</p>
+                        <p>If the Pomodoro timer is active the music player will play music during study time and will pause during breaks.</p>
+                    </div>
+                </div>
+            </div>
+    
+    </div>
     </body>
     <footer>
         <p>Christina Zimmer<br>
         <p>Sina<br>
         <p>Nuray<br>
 
-        <a href="mailto:hege@example.com">hege@example.com</a></p>
     </footer>
 </html>

@@ -21,6 +21,25 @@ window.onload = function(){
     let goalsButton = document.getElementById("goalsButton");
     let goals      = document.getElementById("goals");
     let steps     = document.getElementById("steps");
+    let goalList = document.getElementById("goalList");
+
+    if(goalList) {
+        async function getGoals() {
+            console.log("hello", "goals: ", goals.value, " steps: ", steps.value);
+                let output = await postData('http://localhost:5000/goals', {goals: goals.value, steps: steps.value});
+
+                let outputHTML = "";
+
+                for(let i =0 ;i < output.body.length; i++) {
+                    outputHTML += "<p>" +  "(steps:" + output.body[i].steps + ") " + output.body[i].goals +"</p>"
+                }
+
+                console.log(output.body);
+                goalList.innerHTML = outputHTML;
+        }
+
+        getGoals();
+    }
 
 
     if(goalsButton) {
@@ -29,7 +48,14 @@ window.onload = function(){
             console.log("hello", "goals: ", goals.value, " steps: ", steps.value);
             let output = await postData('http://localhost:5000/goals/new', {goals: goals.value, steps: steps.value});
 
-            console.log(output);
+            let outputHTML = "";
+
+            for(let i =0 ;i < output.body.length; i++) {
+                outputHTML += "<p>" +  "(steps:" + output.body[i].steps + ") " + output.body[i].goals +"</p>"
+            }
+
+            console.log(output.body);
+            goalList.innerHTML = outputHTML;
         }
     }
 }

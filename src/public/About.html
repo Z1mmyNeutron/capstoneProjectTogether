@@ -8,9 +8,13 @@
             justify-content:  center;
             align-items: center;
             text-align: center;
+            color: white;
         }
+        body{
+        background: radial-gradient(#e66465, #9198e5);
+     }
         .Headers{
-            color:blue;
+            color:white;
             justify-content:  center;
             align-items: center;
             text-align: center;
@@ -18,7 +22,7 @@
 
         }
         .Headers2{
-            color: black;
+            color: white;
             justify-content:  center;
             align-items: center;
             text-align: center;
@@ -29,19 +33,15 @@
         .grid-container1 {
             display: grid;
             grid-template-columns: auto auto auto;
-            background-color: #dfad8d;
             padding: 20px;
         }
 
         .grid-container {
             display: grid;
             grid-template-columns: auto auto auto;
-            background-color: #1ca9cc;
             padding: 20px;
         }
         .grid-item {
-            background-color: rgba(255, 255, 255, 0.8);
-            border: 1px solid rgba(0, 0, 0, 0.8);
             padding: 20px;
             font-size: 20px;
             text-align: center;
@@ -74,7 +74,6 @@
         align-items: center; 
         justify-content: center;
         text-align: center;
-        background-color: black;
         color:rgb(177, 225, 234);
         border-radius: 2px;
         cursor: pointer;
@@ -86,12 +85,18 @@
     
       
     }
+    footer {
+        text-align: center;
+        padding: 3px;
+        color: white;
+        font-family:monaco;
+       
+     }
 
 
     .navbarButton:hover{
         font-family: monaco;
         transition: all linear .5s;
-        background-color: rgb(4, 24, 0);
         color:rgb(255, 255, 255);
         border-radius: 5%;
         list-style-type: none;
@@ -121,8 +126,8 @@
                     <h1 class = "Headers2" >The Study</h1>
                     <h1 class = "Headers2">Room</h1>
                 </div>
-                <div class="grid-item" style=" background-color: #c05f1e;">
-                    <div style=" background-color: #c05f1e;">
+                <div class="grid-item" style=" background-color: rgba(255,255,255,.8); border-radius: 5px;">
+                    <div>
                         <img src = "https://media.istockphoto.com/photos/fireplace-picture-id157523682?k=20&m=157523682&s=612x612&w=0&h=O-rWgkOqcc0CuyVWw8B4aSZ104zZFe9NXLD8xI8dLGs=" />
                     </div>
                 </div>
@@ -132,7 +137,6 @@
 
             <div class="grid-container">
                 <div class="grid-tem">
-                    <p> filler text</p>
                 </div>
                 <div class="grid-item">
                     <div class="about" id="About">
@@ -148,4 +152,10 @@
     
     </div>
     </body>
+    <footer>
+        <p>Christina Zimmer<br>
+        <p>Sina<br>
+        <p>Nuray<br>
+
+    </footer>
 </html>

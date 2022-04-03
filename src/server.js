@@ -32,8 +32,8 @@ async function main(){
         res.send(blogContent);
     })
 
-    app.get('/goals', (req, res)=>{
-        res.send(goalsContent);
+    app.post('/goals', (req, res)=>{
+        res.send(JSON.stringify(goalsContent));
     })
 
     app.post('/goals/new', function(req, res){

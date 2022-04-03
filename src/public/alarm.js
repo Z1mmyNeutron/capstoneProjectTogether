@@ -16,8 +16,12 @@ const alarmText = (time) => `Alarm set at time ${time}`;
 
 // Initialize alarm sound
 const alarmAudio = document.getElementById("alarm-audio");
-alarmAudio.src = "http://soundbible.com/grab.php?id=1252&type=mp3";
+alarmAudio.src = "./audio/Hope.mp3";
 alarmAudio.load();
+
+const secondAudio = document.getElementById("alarm-audio2");
+secondAudio.src = "./audio/Ice.mp3";
+secondAudio.load();
 
 
 let alarmHeader = document.getElementById("alarm-header");
@@ -41,10 +45,12 @@ const handleSubmit = (event) => {
       hour.value = 0;
       sec.value = 2;
       min.value = 0;
+      alarmAudio.play();
     } else if(nextIncrementShouldBe25 === true) {
       hour.value = 0;
       sec.value = 10;
       min.value = 0;
+      secondAudio.play();
     }
 
     alarmString = getTimeString_fromNow({ hours: hour.value, minutes: min.value, seconds: sec.value,});
@@ -113,13 +119,16 @@ const renderTime = () => {
   const timeString = getTimeString( hours, minutes, seconds );
   // console.log("time string :: ", timeString)
   if (alarmString === timeString) {
-    alarmAudio.play();
-
+    
     if(nextIncrementShouldBe25 === true) {
+      alarmAudio.play();
+      secondAudio.pause();
       alarmString = getTimeString_fromNow({hours:0, minutes:0, seconds:2});
       alarmHeader.style.color="blue";
       gridContainer.style.backgroundColor="blue";
     } else if(nextIncrementShouldBe5 === true) {
+      secondAudio.play();
+      alarmAudio.pause();
       alarmString = getTimeString_fromNow({hours:0, minutes:0, seconds:10});
       gridContainer.style.backgroundColor="red"
       alarmHeader.style.color="red";

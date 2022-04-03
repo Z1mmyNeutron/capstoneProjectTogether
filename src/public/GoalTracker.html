@@ -13,14 +13,19 @@
         footer {
         text-align: center;
         padding: 3px;
-        background-color: DarkSalmon;
         color: white;
         font-family:monaco;
        
      }
+     p{
+         color: white;
+     }
+     body{
+        background: radial-gradient(#e66465, #9198e5);
+     }
 
         .Headers{
-            color:blue;
+            color:white;
             justify-content:  center;
             align-items: center;
             text-align: center;
@@ -30,12 +35,9 @@
         .grid-container {
             display: grid;
             grid-template-columns: auto auto auto;
-            background-color: #2196F3;
             padding: 10px;
         }
         .grid-item {
-            background-color: rgba(255, 255, 255, 0.8);
-            border: 1px solid rgba(0, 0, 0, 0.8);
             padding: 20px;
             font-size: 20px;
             text-align: center;
@@ -88,7 +90,7 @@
             text-align: center;
         }
         .Headers{
-            color:blue;
+            color:white;
             justify-content:  center;
             align-items: center;
             text-align: center;
@@ -98,12 +100,13 @@
         .grid-container {
             display: grid;
             grid-template-columns: auto auto auto;
-            background-color: #2196F3;
             padding: 10px;
         }
         .grid-item {
-            background-color: rgba(255, 255, 255, 0.8);
-            border: 1px solid rgba(0, 0, 0, 0.8);
+            background-color: rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 5px;
+
             padding: 20px;
             font-size: 20px;
             text-align: center;
@@ -142,10 +145,12 @@
         }
         #current-time {
             font-size: 32px;
+            color:white;
         }
         #current-time,
         .create-alarm,
         #active-alarm {
+            color:white;
             text-align: center;
         }
         .create-alarm,
@@ -156,10 +161,12 @@
         input {
             width: 100px;
             height: 30px;
+            color:white;
         }
         .alarm-inputs,
         #alarm-text {
             margin-bottom: 30px;
+            color:white;
         }
         button {
             font-size: 18px;
@@ -170,9 +177,8 @@
         
         
     </style>
-    <body>
         <div>
-            <div class="navbarContainer" id="navbarContainer">
+            <div class="navbarContainer" id="navbarContainer" style=" margin-top: 22px;";>
                 <li><a class="active" href="/" id="Home">Home</a></li>
                 <li><a href="Links.html" id="Links">Useful Links</a></li>
                 <li><a href="GoalTracker.html" id="GoalTracker">Goal Tracker</a></li>
@@ -208,7 +214,7 @@
                     
                     <div class="grid-item">
                         <div id="alarm">
-                            <h1>Current Time</h1>
+                            <h1 style="color:white;">Current Time</h1>
                             <div id="current-time"></div>
                             <div class="create-alarm">
                               <div>Set Alarm</div>
@@ -250,6 +256,7 @@
                             <button id="clear-alarm">Clear Alarm</button>
                           </div>
                           <audio id="alarm-audio"></audio>
+                          <audio id="alarm-audio2"></audio>
                     
     
                     </div>
@@ -261,25 +268,11 @@
             <h1 class = "Headers">Goal Tracker</h1>
 
             <div class="grid-container">
-                <div class="grid-tem">
-                    <p> filler text</p>
-                </div>
+                <div class="grid-tem" id="goalList"></div>
                 <div class="grid-item">
                     
                     <div>
-                        <p>Add Goal</p>
-                        <input type="text"  id="goals"  name="goals"  placeholder="Goal Name" class="textInputClass"></input>
-            
-                        <br>
-            
-                        <input type="text"  id="steps"  name="steps"  placeholder="teps"  class="textInputClass"></input>
-            
-                        <br>
-            
-                        <br>
-                        <br>
-                        
-                        <p id="goalsButton">Post</p>
+                       
                     </div>
                 
             </div>
@@ -290,7 +283,6 @@
         
     
     </div>
-    </body>
     <footer>
         <p>Christina Zimmer<br>
         <p>Sina<br>

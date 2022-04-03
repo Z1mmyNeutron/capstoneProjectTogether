@@ -6,7 +6,7 @@
     <style>
     
         .Headers{
-            color:blue;
+            color:white;
             justify-content:  center;
             align-items: center;
             text-align: center;
@@ -16,15 +16,16 @@
         .grid-container {
             display: grid;
             grid-template-columns: auto auto auto;
-            background-color: #2196F3;
             padding: 10px;
+            border-radius: 5px;
         }
         .grid-item {
-            background-color: rgba(255, 255, 255, 0.8);
+            background-color: rgba(0, 0, 0, .5);
             border: 1px solid rgba(0, 0, 0, 0.8);
             padding: 20px;
             font-size: 20px;
             text-align: center;
+            color:white;
         }
 
      
@@ -34,12 +35,14 @@
     footer {
         text-align: center;
         padding: 3px;
-        background-color: DarkSalmon;
+ 
         color: white;
         font-family:monaco;
        
     }
-
+    body{
+        background: radial-gradient(#e66465, #9198e5);
+    }
     li a{
         display: block;
         color: white;
@@ -56,14 +59,13 @@
         margin: 0;
         padding: 0;
         overflow: hidden;
-        background-color: #333;
+       
     }
     .navbarContainer{
         font-family: monaco;
         align-items: center; 
         justify-content: center;
         text-align: center;
-        background-color: black;
         color:rgb(177, 225, 234);
         border-radius: 2px;
         cursor: pointer;
@@ -98,7 +100,6 @@
                 <li><a class="active" href="/" id="Home">Home</a></li>
                 <li><a href="Links.html" id="Links">Useful Links</a></li>
                 <li><a href="GoalTracker.html" id="GoalTracker">Goal Tracker</a></li>
-                <li><a href="About.html" id="About">About</a></li>   
                 <li><a href="Music.html" id="Music">Music</a></li>   
             </div>
         
@@ -126,53 +127,43 @@
                 </div>
                 <div class="grid-item">
                     <div style="display:block;">
-                    <audio controls autoplay>
-                        <source src="./audio/cali.ogg" type="audio/ogg">
+                    <audio controls >
                         <source src="./audio/cali.mp3" type="audio/mpeg">
                         Your browser does not support the audio element.
                     </audio>
-                    <audio controls autoplay>
-                        <source src="./audio/Homework.mp3" type="audio/ogg">
+                    <audio controls>
                         <source src="./audio/Homework.mp3" type="audio/mpeg">
                         Your browser does not support the audio element.
                     </audio>
-                    <audio controls autoplay>
-                        <source src="./audio/Ice.mp3" type="audio/ogg">
+                    <audio controls>
                         <source src="./audio/Ice.mp3" type="audio/mpeg">
                         Your browser does not support the audio element.
                     </audio>
-                    <audio controls autoplay>
-                        <source src="./audio/NightLight.mp3" type="audio/ogg">
+                    <audio controls>
                         <source src="./audio/NightLight.mp3" type="audio/mpeg">
                         Your browser does not support the audio element.
                     </audio>
-                    <audio controls autoplay>
-                        <source src="./audio/Pride.mp3" type="audio/ogg">
+                    <audio controls>
                         <source src="./audio/Pride.mp3" type="audio/mpeg">
                         Your browser does not support the audio element.
                     </audio>
-                    <audio controls autoplay>
-                        <source src="./audio/Pursuit.mp3" type="audio/ogg">
+                    <audio controls>
                         <source src="./audio/Pursuit.mp3" type="audio/mpeg">
                         Your browser does not support the audio element.
                     </audio>
-                    <audio controls autoplay>
-                        <source src="./audio/Thing.mp3" type="audio/ogg">
+                    <audio controls>
                         <source src="./audio/Thing.mp3" type="audio/mpeg">
                         Your browser does not support the audio element.
                     </audio>
-                    <audio controls autoplay>
-                        <source src="./audio/Trippin.mp3" type="audio/ogg">
+                    <audio controls>
                         <source src="./audio/Trippin.mp3" type="audio/mpeg">
                         Your browser does not support the audio element.
                     </audio>
-                    <audio controls autoplay>
-                        <source src="./audio/Warrior.mp3" type="audio/ogg">
+                    <audio controls>
                         <source src="./audio/Warrior.mp3" type="audio/mpeg">
                         Your browser does not support the audio element.
                     </audio>
-                    <audio controls autoplay>
-                        <source src="./audio/World.mp3" type="audio/ogg">
+                    <audio controls>
                         <source src="./audio/World.mp3" type="audio/mpeg">
                         Your browser does not support the audio element.
                     </audio>
