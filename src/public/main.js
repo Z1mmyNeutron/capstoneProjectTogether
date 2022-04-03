@@ -16,15 +16,21 @@ window.onload = function(){
 
 
 
+    
     //Button for posting goal
     let goalsButton = document.getElementById("goalsButton");
     let goals      = document.getElementById("goals");
     let steps     = document.getElementById("steps");
 
 
-    goalsButton.onclick = function(){
-        console.log("hello", "goals: ", goals.value, " steps: ", steps.value);
-        postData('http://localhost:5000/goals/new', {goals: goals.value, steps: steps.value});
+    if(goalsButton) {
+        goalsButton.onclick =  async function(){
+
+            console.log("hello", "goals: ", goals.value, " steps: ", steps.value);
+            let output = await postData('http://localhost:5000/goals/new', {goals: goals.value, steps: steps.value});
+
+            console.log(output);
+        }
     }
 }
 

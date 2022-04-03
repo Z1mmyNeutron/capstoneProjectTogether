@@ -36,7 +36,7 @@ async function main(){
         res.send(goalsContent);
     })
 
-    app.post('goals/new', function(req, res){
+    app.post('/goals/new', function(req, res){
         console.log("goals/new: ", req.body)
         
         //validate 
@@ -59,7 +59,7 @@ async function main(){
             goalsContent.push(content);
 
             //return a data packet to the user
-            res.send(JSON.stringify(content));
+            res.send(JSON.stringify(goalsContent));
         } else {
             //otherwise, report error
             res.send(JSON.stringify({
