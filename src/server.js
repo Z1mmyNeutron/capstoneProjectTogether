@@ -44,15 +44,14 @@ async function main(){
 
         //then verify that all needed properties exist and are non-empty if strings
         
-      
-        let hasGoal = input.goal !== undefined && input.goal.length > 0;
+        let hasGoals = input.goals !== undefined && input.goals.length > 0;
         let hasSteps = input.steps !== undefined && input.steps.length > 0;
 
-        if(hasGoal === true && hasSteps === true) {
+        if(hasGoals === true && hasSteps === true) {
             //if all validation checks are met, create a content object
             let content = {
                 steps        : input.steps, 
-                goal          : input.goal, 
+                goals        : input.goals, 
                 timestamp     : new Date(),
                 contentID     : Math.floor(Math.random()*99999999) 
             };
@@ -66,7 +65,7 @@ async function main(){
             res.send(JSON.stringify({
                 error : "Missing requisite property (check your spelling)",
                 missingSteps   : !hasSteps,
-                missingGoal    : !hasGoal,
+                missingGoals    : !hasGoals,
             }))
         }
     })
