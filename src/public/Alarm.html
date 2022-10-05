@@ -2,7 +2,11 @@
 <!DOCTYPE html>
 
 <html>
-    <script type="module" src="./alarm.js"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IF-edge">
+    <meta name="viewport" content="width=device-width, itial-scale=1.0">
+    <title> SHAZAM API</title>
+    <script src='./shaZam.js' defer></script>
     <style>
          footer {
             text-align: center;
@@ -98,14 +102,34 @@
         }
 
     </style>
+    <h1>Shazam Api</h1>
+        <div class="grid-container">
+            <div class="grid-item" >
+        <form action="">
+        <div class="search">
+            <label for="">Search For Music</label>
+            <input type="text" placeholder="search for music" id="search-input">
+        </div>
+        <div class="button">
+            <button id="search">search</button>
+        </div>
 
-<div class="navbarContainer" id="navbarContainer">
-    <a class="active" href="/" id="Home">Home</a>
-    <a href="Links.html" id="Links">Useful Links</a>
-    <a href="GoalTracker.html" id="GoalTracker">Goal Tracker</a>
-    <a href="Alarm.html" id="Alarm">Alarm</a>
-    <a href="About.html" id="About">About</a>   
-</div>
+        <div class="display-music"></div>
+        <div class="data-holder" id="data-holder" style="background-color: black;">Data
+            <p id="data-holder"></p>
+        </div>
+    </form>
+    </div>
+    </div>
+    <div class="navbarContainer" id="navbarContainer">
+        <li><a class="active" href="/" id="Home">Home</a></li>
+        <li><a href="Links.html" id="Links">Useful Links</a></li>
+        <li><a href="GoalTracker.html" id="GoalTracker">Goal Tracker</a></li>
+        <li><a href="Alarm.html" id="Alarm">ShaZam</a>
+        <li><a href="About.html" id="About">About</a></li>   
+        <li><a href="Music.html" id="Music">Music</a></li>   
+    </div>
+
      
 
 </html>
