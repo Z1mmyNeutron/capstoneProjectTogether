@@ -1,5 +1,5 @@
-var SpotifyWebApi = require('spotify-web-api-node');
-const express = require('express')
+import SpotifyWebApi from 'spotify-web-api-node'
+import express from 'express'
 //Linked to Music.html page
 
 

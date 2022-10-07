@@ -1,6 +1,7 @@
 
-const fs = require('fs')
-const SpotifyWebApi = require('spotify-web-api-node');
+import * as fs from 'fs';
+import SpotifyWebApi from './spotify/spotify-web-api-node';
+
 const token = "XXXXXX";
 
 const spotifyApi = new SpotifyWebApi();
