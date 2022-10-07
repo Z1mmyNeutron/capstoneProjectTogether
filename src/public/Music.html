@@ -3,8 +3,7 @@
 
 <html>
     <script type="module" src="./spotify.js"></script>
-    <script type="module" src="./getMe.js"></script>
-    
+   
     <style>
     
         .Headers{
@@ -110,9 +109,30 @@
                            
         </div>
         
-        <h1 class="Headers" id="alarm-header">Spotify Api</h1>
+        <h1 class="Headers" id="music-header">Spotify Api</h1>
             <br>
     
+   
+            <div class="grid-container">
+                <div class="grid-item" >
+            <form action="">
+            <div class="search-adb">
+                <label for="">Search For Music</label>
+                <input type="text" placeholder="search for music" id="search-input-adb">
+            </div>
+            <div class="button">
+                <button id="search-adb">search</button>
+            </div>
+    
+            <div class="display-music"></div>
+            <div class="data-holder-adb" id="data-holder-adb" style="background-color: black;">Data
+                <p id="data-holder-adb"></p>
+            </div>
+        </form>
+        </div>
+        </div>
+
+
     </div>
     </body>
     <footer>
