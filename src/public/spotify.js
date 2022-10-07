@@ -1,8 +1,9 @@
 
 
 window.onload = function(){
-	let search = document.getElementById('find-user-input-adb');
 	let dataTag = document.getElementById('data-holder-adb');
+	let search = document.getElementById('find-user-input-adb');
+	
 
 	const options = {
 		method: 'GET',
@@ -10,9 +11,10 @@ window.onload = function(){
       'X-RapidAPI-Key': 'dc7f3f11a9msh3153f83757b6349p128db9jsnf9b2a23891e7',
       'X-RapidAPI-Host': 'theaudiodb.p.rapidapi.com'
     }
-		
 	};
-	let dataHolder = [];
+
+
+	let storeData = [];
 	document.getElementById('search-adb').addEventListener('click', (e) => { 
 		e.preventDefault();
 		let endpoint = `https://theaudiodb.p.rapidapi.com/track-top10.php?s=${search.value}`;
@@ -21,19 +23,20 @@ window.onload = function(){
 			.then(response => response.json())
 			.then(data => {
 				console.log(data.artists)	
-				dataHolder.push(data)
-				let s = JSON.stringify(dataHolder, null, "\t")
-				dataTag.innerHTML = s
+				storeData.push(data)
+
+				let str = JSON.stringify(storeData, null, "\t")
+				dataTag.innerHTML = str
 				
 			})
 			
-	//.then(response => console.log(response))
+		//.then(response => console.log(response))
 		.catch(err => console.error(err));
 		})
 
 		
 			
-	console.log("dataHolder", dataHolder)
+	console.log("dataHolder", storeData)
 
 }
 
