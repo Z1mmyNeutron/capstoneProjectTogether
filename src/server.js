@@ -5,6 +5,11 @@ const express = require('express');
 const app = express();
 const PORT = process.env.PORT || 5000;
 
+
+
+
+
+
 //mongoose settup is commented out
 //const mongoose = require('mongoose');
 //const databaseLink = 'mongodb+srv://crzimmer1:Blitzen1@cluster0.sry9r.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
@@ -17,6 +22,11 @@ async function main(){
     app.use(express.static(path.join(__dirname, 'public')));            //static = serving public website.
     app.listen(PORT, () => console.log(`Listening on ${ PORT }`));   
 
+
+
+
+
+    
     
     let messages = [];
     let blogContent = [];
