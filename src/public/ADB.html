@@ -2,17 +2,10 @@
 <!DOCTYPE html>
 
 <html>
-    <script type="module" src="./main.js"></script>
+    <script type="module" src="./adb.js"></script>
+   
     <style>
-        .about{
-            justify-content:  center;
-            align-items: center;
-            text-align: center;
-            color: white;
-        }
-        body{
-        background: radial-gradient(#e66465, #9198e5);
-     }
+    
         .Headers{
             color:white;
             justify-content:  center;
@@ -21,41 +14,36 @@
             font-size: 40px;
 
         }
-        
-        p {
-            padding: 5px;
-        }
-        .Headers2{
-            color: rgb(110, 16, 16);
-            justify-content:  center;
-            align-items: center;
-            text-align: center;
-            font-size: 55px;
-            vertical-align: middle;
-            
-
-        }
-        .grid-container1 {
-            display: grid;
-            grid-template-columns: auto auto auto;
-            padding: 20px;
-        }
-
         .grid-container {
             display: grid;
             grid-template-columns: auto auto auto;
-            padding: 20px;
+            padding: 10px;
+            border-radius: 5px;
         }
         .grid-item {
+            background-color: rgba(0, 0, 0, .5);
+            border: 1px solid rgba(0, 0, 0, 0.8);
             padding: 20px;
             font-size: 20px;
             text-align: center;
+            color:white;
         }
 
-        li{
+     
+    li{
         float:left;
     }
-
+    footer {
+        text-align: center;
+        padding: 3px;
+ 
+        color: white;
+        font-family:monaco;
+       
+    }
+    body{
+        background: radial-gradient(#e66465, #9198e5);
+    }
     li a{
         display: block;
         color: white;
@@ -72,7 +60,7 @@
         margin: 0;
         padding: 0;
         overflow: hidden;
-        background-color: #333;
+       
     }
     .navbarContainer{
         font-family: monaco;
@@ -90,18 +78,12 @@
     
       
     }
-    footer {
-        text-align: center;
-        padding: 3px;
-        color: white;
-        font-family:monaco;
-       
-     }
 
 
     .navbarButton:hover{
         font-family: monaco;
         transition: all linear .5s;
+        background-color: rgb(4, 24, 0);
         color:rgb(255, 255, 255);
         border-radius: 5%;
         list-style-type: none;
@@ -110,6 +92,7 @@
         
    
     }
+
         
     </style>
     <body>
@@ -123,13 +106,34 @@
                 <li><a href="ADB.html" id="adb">ADB</a></li>   
             </div>
     
+                           
+        </div>
+        
+        <h1 class="Headers" id="adb-header">ADB API </h1>
+            <br>
+    
+   
+            <div class="grid-container">
+                <div class="grid-item" >
+            <form action="">
+            <div class="search-adb">
+                <label for="">Search For An Artist To Get Their Top Ten Tracks</label>
+                <input type="text" placeholder="search for music" id="search-input-adb">
+            </div>
+            <div class="button">
+                <button id="search-adb">search</button>
+            </div>
+    
+            <div class="display-music-adb"></div>
+            <div class="data-holder-adb" id="data-holder-adb" style="background-color: black;">Data
+                <p id="data-holder-adb"></p>
+            </div>
+        </form>
+        </div>
         </div>
 
-        <h1 class="Headers" id="alarm-header">SoundCloud Api</h1>
-            <br>
 
-            <br>
-
+    </div>
     </body>
     <footer>
         <p>Christina Zimmer<br>
@@ -140,5 +144,5 @@
              <a href="mailto:doylej82@students.rowan.edu">doylej82@students.rowan.edu</a></p>
         <p>Zachary Nealis<br>
              <a href="mailto:nealisz9@students.rowan.edu">nealisz9@students.rowan.edu</a></p>
-    </footer>
+   </footer>
 </html>
