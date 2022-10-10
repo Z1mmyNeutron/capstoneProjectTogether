@@ -16,4 +16,5 @@ fetch(url)
         let x = JSON.stringify(data, null, 4)
         dataTag.innerHTML = x
     })
-    .then(data => fs.writeFileSync('data.json', data));
+})
+}
