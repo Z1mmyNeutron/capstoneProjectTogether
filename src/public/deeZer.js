@@ -1,7 +1,19 @@
 const fs = require('fs');
-let url = 'https://api.deezer.com/editorial/0/charts?limit=50';
 
+window.onload = function(){
+	let input = document.getElementById('search-input');
+	let dataTag = document.getElementById('data-holder');
+let url = `https://api.deezer.com/search?q=${input.value}`;
+
+
+let dataHolder = [];
+document.getElementById('search').addEventListener('click', (e) => { 
+    e.preventDefault();
 fetch(url)
     .then(response => response.json())
-    .then(data => JSON.stringify(data, null, 4))
+    .then(data => {
+        dataHolder.push(data)
+        let x = JSON.stringify(data, null, 4)
+        dataTag.innerHTML = x
+    })
     .then(data => fs.writeFileSync('data.json', data));
