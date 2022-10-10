@@ -35,5 +35,6 @@ window.onload = function(){
 		
 			
 	console.log("dataHolder", dataHolder)
+	console.log("new")
 
 }
