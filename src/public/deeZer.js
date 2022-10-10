@@ -1,21 +1,33 @@
-const fs = require('fs');
+
 
 window.onload = function(){
-	let input = document.getElementById('search-input');
-	let dataTag = document.getElementById('data-holder');
-let url = `https://api.deezer.com/search?q=${input.value}`;
+	let input = document.getElementById('search-input-dee');
+	let dataTag = document.getElementById('data-holder-dee');
+    
+    const options = {
+        method: 'GET',
+        headers: {
+            'X-RapidAPI-Key': '4c187f9309msha2277d1a56df93fp1c9f85jsn2b8dafccf3ff',
+            'X-RapidAPI-Host': 'deezerdevs-deezer.p.rapidapi.com'
+        }
+    };
+
 
 
 let dataHolder = [];
-document.getElementById('search').addEventListener('click', (e) => { 
+document.getElementById('search-dee').addEventListener('click', (e) => { 
     e.preventDefault();
-fetch(url)
+
+    let url = `https://deezerdevs-deezer.p.rapidapi.com/search?q=${input.value}`;
+
+fetch(url, options)
     .then(response => response.json())
     .then(data => {
         dataHolder.push(data)
         let x = JSON.stringify(data, null, 4)
         dataTag.innerHTML = x
     })
+    .catch(err => console.error(err));
 })
+console.log("DataHolder", dataHolder)
 }
-console.log("resolve merge conflict test")
