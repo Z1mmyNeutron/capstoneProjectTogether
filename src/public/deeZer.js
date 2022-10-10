@@ -18,3 +18,4 @@ fetch(url)
     })
 })
 }
+console.log("resolve merge conflict test")
