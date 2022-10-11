@@ -1,6 +1,4 @@
-import * as fs from 'fs';
-import * as events from 'events';
-import * as readline from 'readline';
+
 window.onload = function(){
 	let input = document.getElementById('search-input');
 	let dataTag = document.getElementById('data-holder');
