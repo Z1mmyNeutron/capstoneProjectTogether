@@ -18,9 +18,9 @@ let dataHolder = [];
 document.getElementById('search-dee').addEventListener('click', (e) => { 
     e.preventDefault();
 
-    let url = `https://api.deezer.com/search?q=${input.value}`;
+    let url = `https://deezerdevs-deezer.p.rapidapi.com/search?q=${input.value}`;
 
-fetch(url)
+fetch(url, options)
     .then(response => response.json())
     .then(data => {
         dataHolder.push(data)
