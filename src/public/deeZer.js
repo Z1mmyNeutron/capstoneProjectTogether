@@ -20,8 +20,14 @@ document.getElementById('search-dee').addEventListener('click', (e) => {
 
     let url = `https://deezerdevs-deezer.p.rapidapi.com/search?q=${input.value}`;
 
-    DZ.api(`/search/artist/?q=${input.value}`, function(response){
-        console.log("Name of user id 5", response.artist)
-    });
+fetch(url, options)
+    .then(response => response.json())
+    .then(data => {
+        dataHolder.push(data)
+        let x = JSON.stringify(data, null, 4)
+        dataTag.innerHTML = x
+    })
+    .catch(err => console.error(err));
 })
+console.log("DataHolder", dataHolder)
 }
