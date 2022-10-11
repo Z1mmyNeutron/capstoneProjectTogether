@@ -18,7 +18,10 @@ let dataHolder = [];
 document.getElementById('search-dee').addEventListener('click', (e) => { 
     e.preventDefault();
 
+    let url = `https://deezerdevs-deezer.p.rapidapi.com/search?q=${input.value}`;
 
-
-DZ.api(`search?q=${input.value}`, function(response){
-	console.log("Name of user id 5", response)
+    DZ.api(`/search?q=${input.value}`, function(response){
+        console.log("Name of user id 5", response)
+    });
+})
+}
