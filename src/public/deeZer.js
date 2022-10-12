@@ -10,16 +10,15 @@ let dataHolder = [];
 document.getElementById('search-dee').addEventListener('click', (e) => { 
     e.preventDefault();
 
-        DZ.api(`/search?q=${input.value}`, function(dataHolder = []){
-            then(response => response.json())
+        DZ.api(`/search?q=${input.value}`, function(response){
+            console.log(response.data)
             .then(data => { dataHolder.push(data)
-            let x = JSON.stringify(data, null, 4)
-            dataTag.innerHTML = x  
-            })
-            .catch(err => console.error(err))
+                let x = JSON.stringify(response, null, 4)
+                dataTag.innerHTML = x
             console.log("DataHolder", dataHolder);
+
         });
     })
-    console.log("DataHolder", dataHolder);
+})
 }
 
