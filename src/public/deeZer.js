@@ -27,7 +27,14 @@ fetch(url, options)
         let x = JSON.stringify(data, null, 4)
         dataTag.innerHTML = x
     })
+    .then(data => {
+        DZ.api('/search?q=' + input.value, function(response){
+            let x = JSON.stringify(response, null, 4)
+            dataHolder.push(x);
+        });
+    })
     .catch(err => console.error(err));
 })
 console.log("DataHolder", dataHolder)
 }
+
