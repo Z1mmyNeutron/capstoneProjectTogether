@@ -26,11 +26,10 @@ fetch(url, options)
         dataHolder.push(data)
         let x = JSON.stringify(data, null, 4)
         dataTag.innerHTML = x
-    })
-    .then(data => {
-        DZ.api('/search?q=' + input.value, function(response){
-            let x = JSON.stringify(response, null, 4)
-            dataHolder.push(x);
+        DZ.api('/search?q=' + input.value, function(data){
+            dataHolder.push(data)
+            let x = JSON.stringify(data, null, 4)
+            dataTag.innerHTML = x;
         });
     })
     .catch(err => console.error(err));
