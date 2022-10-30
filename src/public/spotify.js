@@ -7,11 +7,26 @@ window.onload = function(){
 
 	const options = {
 		method: 'GET',
-    headers: {
-      'X-RapidAPI-Key': 'dc7f3f11a9msh3153f83757b6349p128db9jsnf9b2a23891e7',
-      'X-RapidAPI-Host': 'theaudiodb.p.rapidapi.com'
-    }
+		headers: {
+			'X-RapidAPI-Key': 'dc7f3f11a9msh3153f83757b6349p128db9jsnf9b2a23891e7',
+			'X-RapidAPI-Host': 'theaudiodb.p.rapidapi.com'
+		}
 	};
+	
+	fetch('https://theaudiodb.p.rapidapi.com/track-top10.php?s=%24%7B%7D', options)
+		.then(response => response.json())
+		.then(response => console.log(response))
+		.catch(err => console.error(err));
+
+
+	//			The old Api key
+	//const options = {
+	//	method: 'GET',
+    //headers: {
+    //  'X-RapidAPI-Key': 'dc7f3f11a9msh3153f83757b6349p128db9jsnf9b2a23891e7',
+     // 'X-RapidAPI-Host': 'theaudiodb.p.rapidapi.com'
+    //}
+	//};
 
 
 	let storeData = [];
