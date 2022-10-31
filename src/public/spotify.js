@@ -13,10 +13,10 @@ window.onload = function(){
 		}
 	};
 	
-	fetch('https://theaudiodb.p.rapidapi.com/track-top10.php?s=%24%7B%7D', options)
-		.then(response => response.json())
-		.then(response => console.log(response))
-		.catch(err => console.error(err));
+	//fetch('https://theaudiodb.p.rapidapi.com/track-top10.php?s=%24%7B%7D', options)
+	//	.then(response => response.json())
+	//	.then(response => console.log(response))
+	//	.catch(err => console.error(err));
 
 
 	//			The old Api key
@@ -32,7 +32,8 @@ window.onload = function(){
 	let storeData = [];
 	document.getElementById('search-adb').addEventListener('click', (e) => { 
 		e.preventDefault();
-		let endpoint = `https://theaudiodb.p.rapidapi.com/track-top10.php?s=${search.value}`;
+		//let endpoint = `https://theaudiodb.p.rapidapi.com/track-top10.php?s=${search.value}`;
+		let endpoint = 'https://theaudiodb.p.rapidapi.com/track-top10.php?s=%24%7B%7D';
 
 		fetch(endpoint, options)
 			.then(response => response.json())
