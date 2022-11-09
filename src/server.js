@@ -1,12 +1,8 @@
-
 const path = require('path'); 
 const bodyParser = require('body-parser');
 const express = require('express');
 const app = express();
 const PORT = process.env.PORT || 5000;
-
-
-
 
 
 
@@ -20,11 +16,7 @@ main().catch(err=> console.log(err));
 
 async function main(){
     app.use(express.static(path.join(__dirname, 'public')));            //static = serving public website.
-    app.listen(PORT, () => console.log(`Listening on ${ PORT }`));   
-
-
-
-
+    app.listen(PORT, () => console.log(`Listening on ${ PORT }`));  
 
     
     
