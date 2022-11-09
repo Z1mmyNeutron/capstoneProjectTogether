@@ -13,9 +13,6 @@ window.onload = function(){
             postData('http://localhost:5000/content/new', {sender: title.value, author: author.value, content: content.value});
         }
     }
-
-
-
     
     //Button for posting goal
     let goalsButton = document.getElementById("goalsButton");
